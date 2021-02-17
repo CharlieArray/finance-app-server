@@ -9,7 +9,7 @@ const {requireAuth} = require('../middleware/jwt-auth')
 /*  HTTP Methods to retrieve financial data from database */
 
 //GET ALL STOCKS from User in DB (path: /watchlist/stocks/)
-watchlistRouter.get('/stocks/', requireAuth, (req,res, next)=>{
+watchlistRouter.get('/stocks/', requireAuth, (req,res, next)=> {
     const knexInstance = req.app.get('db')
 
     WatchlistService.getAllStocks(knexInstance, req.user.id)
@@ -39,7 +39,7 @@ watchlistRouter.post('/stocks/:symbol', bodyParser, requireAuth, (req,res,next)=
         WatchlistService.addStock(knexInstance, data)
         .then((data)=>{
           res.status(201)
-          res.json('Added to watchlist')
+          res.json(data)
         })
         .catch(next);
       });
