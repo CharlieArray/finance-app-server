@@ -20,9 +20,7 @@ const WatchlistService = {
 
     //DELETE STOCK FROM WATCHLIST
     deleteStock(knex, id){
-        return(knex)
-        .from('watchlist')
-        .select('*')
+        return knex('watchlist')
         .where('id', id)
         .delete();
     },

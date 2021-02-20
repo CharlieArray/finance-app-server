@@ -55,8 +55,7 @@ watchlistRouter.delete( '/stocks/:id', requireAuth, (req,res,next)=>{
   const knexInstance = req.app.get('db')
   WatchlistService.deleteStock(knexInstance, id)
   .then((data)=>{
-    res.status(204)
-    res.json(data)
+    res.status(204).end()
   })
   .catch(next)
 })
