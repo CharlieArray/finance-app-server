@@ -47,8 +47,7 @@ watchlistRouter.post('/stocks/:symbol', bodyParser, requireAuth, (req,res,next)=
 })
   
   
-//DELETE STOCK from DB for User (path: /watchlist/stocks/:symbol)
-
+//DELETE STOCK from DB for User (path: /watchlist/stocks/:id)
 watchlistRouter.delete( '/stocks/:id', requireAuth, (req,res,next)=>{
   //id is unique id to that stock
   const {id} = req.params

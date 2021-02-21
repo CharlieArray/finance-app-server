@@ -1,4 +1,4 @@
-# Express Boilerplate!
+# Envelope Finance App Server
 
 This is a boilerplate project used for starting new projects!
 
