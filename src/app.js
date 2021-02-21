@@ -22,26 +22,6 @@ app.use('/users', usersRouter)
 app.use('/watchlist', watchlistRouter)
 
 
-/* To Do List:
-- add router file/refactor
-- auth for front end
--crate bearer/auth token?
-
-*/
-
-/*
-PsuedoCode Process to add new stock to watchlistdatabase table
--User inputs stock name in form
--Fetch request/websocket io function to 3rd party API
--response data from api => add new stock to database
-
-
-PsuedoCode Process to remove stock from watchlist database table
- -User clicks on delete button on watchlist
- -delete button needs to have id value
- -id value gets sent to WatchlistService
-*/
-
 app.use(function errorHandler(error, req, res, next) {
   let response;
   if (NODE_ENV === "production") {
